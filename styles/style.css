@@ -5,7 +5,6 @@
     --secondaryColor: Silver;
     --alternativeColor: Blue;
     --accentColor: Gold;
-    --accentColor: Green;
     --mainBoxShadow: 0.3vw 0.3vw 1vw rgba(120, 200, 87, 11);
 }
 
@@ -19,26 +18,74 @@
 
 body {
     overflow-x: hidden !important;
-    background-image: linear-gradient(90deg, rgba(129, 158, 148, 1) 100%, rgba(0, 212, 255, 1) 100%, rgba(23, 22, 52, 1) 100%, rgba(27, 80, 77, 1) 100%);
+    max-height: 100vh;
+        max-width: 100%;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 150% 150%;
+        animation: gradient 20s ease infinite;
 }
-#grey{
-background-color: darkgray;
+
+/* Header Styles */
+.icon {
+    border-radius: 12px;
 }
-.home-view{
-    background-color: red;
-} 
-.about-view{
-    background-color:color-mix(in lch, color silver 75%, color blue 25%);
-} 
-.events-view{
-    background-color: gold;
-} 
-.review-view{
-    background-color: color-mix(in lch, color silver 25%, color pink 75%);
-} 
-.contact-view{
-    background-color: green;
+
+.logo {
+    height: 8rem;
+    scale: 1.055;
+    border-radius: 5px;
 }
+
+.logo:hover {
+    scale: 1.1;
+}
+
+.nav-link:hover {
+    color: darkcyan !important;
+    scale: 1.05;
+}
+
+.company-name {
+    margin: auto;
+    margin-left: 9.5rem;
+    font-size: 5rem;
+    font-style: italic;
+    color: rgba(300, 300, 300, 0.78);
+    text-shadow: .5vw .4vw 1vw rgba(0, 4, 68, 9);
+}
+
+.navbar {
+    box-shadow: var(--mainBoxShadow);
+}
+
+#grey {
+    background-color: darkgray;
+}
+
+.home-view {
+        background-image: url(https://i.postimg.cc/W1wbShdn/1920-x-1080-gaming-cyberpunk-city-a2ho6vmdryz2x419.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: auto;
+        max-width: 100vw;
+}
+
+.about-view {
+    background-color: silver;
+}
+
+.events-view {
+    background-color: var(--accentColor);
+}
+
+.review-view {
+    background-color: pink;
+}
+
+.contact-view {
+    background-color: var(--accentColor);
+}
+
 /* About Section */
 .feature-box-1 {
     padding: 32px;
@@ -48,17 +95,11 @@ background-color: darkgray;
     z-index: 1;
     border-radius: 10px;
     overflow: hidden;
-    -moz-transition: ease all 0.35s;
-    -o-transition: ease all 0.35s;
-    -webkit-transition: ease all 0.35s;
     transition: ease all 0.35s;
     top: 0;
 }
 
 .feature-box-1 * {
-    -moz-transition: ease all 0.35s;
-    -o-transition: ease all 0.35s;
-    -webkit-transition: ease all 0.35s;
     transition: ease all 0.35s;
 }
 
@@ -98,9 +139,6 @@ background-color: darkgray;
     width: 0;
     background: #20247b;
     z-index: -1;
-    -moz-transition: ease all 0.35s;
-    -o-transition: ease all 0.35s;
-    -webkit-transition: ease all 0.35s;
     transition: ease all 0.35s;
 }
 
@@ -141,4 +179,338 @@ background-color: darkgray;
     border-left: 5px solid #fc5356;
     padding-left: 15px;
 }
-/* ====================================================== */
+
+/* ====================About Section================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    font-size: 16px;
+    color: #888;
+}
+
+.feature-box-1 {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature-box-1 .icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.feature-box-1 h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-box-1 p {
+    font-size: 14px;
+    color: #888;
+}
+
+/* ============Events Section==================== */
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-rotating {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.front {
+    background-color: #f8f9fa;
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.back {
+    background-color: #e9ecef;
+    transform: rotateY(180deg);
+}
+
+.card-up {
+    height: 50%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: -50px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    margin: 10px;
+    overflow: auto;
+    max-height: 250px;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.blue-text {
+    color: blue;
+}
+
+.rotate-btn {
+    display: block;
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.rotate-btn i {
+    margin-right: 5px;
+}
+
+.list-inline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.list-inline-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.list-inline-item:last-child {
+    margin-right: 0;
+}
+
+.p-2 {
+    padding: 5px;
+}
+
+.fa-lg {
+    font-size: 18px;
+}
+
+.fb-ic {
+    color: #3b5998;
+}
+
+.tw-ic {
+    color: #00aced;
+}
+
+.gplus-ic {
+    color: #dd4b39;
+}
+
+.li-ic {
+    color: #007bb5;
+}
+
+.bubble-animation {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 123, 255, 0.15);
+    border-radius: 50%;
+    animation: bubble 3s infinite;
+}
+
+@keyframes bubble {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* ==============Review Section================= */
+.review-card {
+    border-radius: 10px;
+    box-shadow: var(--mainBoxShadow);
+    background: var(--secondaryColor);
+    padding: 30px;
+    margin: 10px;
+    text-align: center;
+}
+
+.review-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* =============Contact Section=============== */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e9ecef;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button {
+    padding: 10px 30px;
+    background-color: #20247b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: #fc5356;
+}
+
+/* =============Footer Section================ */
+footer {
+    background-color: var(--secondaryColor);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 16px;
+    color: #666;
+}
+
+.footer-text a {
+    color: var(--alternativeColor);
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    color: var(--accentColor);
+}
+/* ================================ */
+/* Main_Section-Contact */
+#contact {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    box-shadow: var(--mainBoxShadow);
+}
+
+.Contact {
+    margin-left: 13rem;
+    margin-right: 13rem;
+    border: 12px solid var(--alternativeColor);
+    border-radius: 4px;
+}
+
+.contact-row {
+    margin: auto;
+    width: 30rem !important;
+
+}
+
+.form-control {
+    width: 100% !important;
+    margin: auto;
+    margin-bottom: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-select {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.btn-outline-info {
+    padding: 1rem 2.1rem;
+    margin-left: 9.5rem;
+    border-radius: 1rem;
+}
+
+/* End-Of_Main_Section-Contact */
+/* ====================================================================== */
+/* Footer-Styling */
+footer {
+    margin-top: 14.85rem;
+    overflow-x: hidden;
+}
+
+/* End-Of_Footer-Styling */
