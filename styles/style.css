@@ -1,10 +1,11 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Share+Tech&display=swap');
 
 :root {
-    --primaryColor: Red;
-    --secondaryColor: Silver;
-    --alternativeColor: Blue;
-    --accentColor: Gold;
+    --primaryColor: red;
+    --secondaryColor: silver;
+    --alternativeColor: blue;
+    --accentColor: gold;
     --mainBoxShadow: 0.3vw 0.3vw 1vw rgba(120, 200, 87, 11);
 }
 
@@ -19,10 +20,24 @@
 body {
     overflow-x: hidden !important;
     max-height: 100vh;
-        max-width: 100%;
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-        background-size: 150% 150%;
-        animation: gradient 20s ease infinite;
+    max-width: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Header Styles */
@@ -32,26 +47,26 @@ body {
 
 .logo {
     height: 8rem;
-    scale: 1.055;
+    transform: scale(1.055);
     border-radius: 5px;
 }
 
 .logo:hover {
-    scale: 1.1;
+    transform: scale(1.1);
 }
 
 .nav-link:hover {
     color: darkcyan !important;
-    scale: 1.05;
+    transform: scale(1.05);
 }
 
 .company-name {
     margin: auto;
-    margin-left: 9.5rem;
+    margin-left: 19rem;
     font-size: 5rem;
     font-style: italic;
     color: rgba(300, 300, 300, 0.78);
-    text-shadow: .5vw .4vw 1vw rgba(0, 4, 68, 9);
+    text-shadow: 0.5vw 0.4vw 1vw rgba(0, 4, 68, 9);
 }
 
 .navbar {
@@ -61,13 +76,12 @@ body {
 #grey {
     background-color: darkgray;
 }
-
 .home-view {
-        background-image: url(https://i.postimg.cc/W1wbShdn/1920-x-1080-gaming-cyberpunk-city-a2ho6vmdryz2x419.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-top: auto;
-        max-width: 100vw;
+    background-image: url(https://i.postimg.cc/W1wbShdn/1920-x-1080-gaming-cyberpunk-city-a2ho6vmdryz2x419.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: auto;
+    max-width: 100vw;
 }
 
 .about-view {
@@ -179,7 +193,17 @@ body {
     border-left: 5px solid #fc5356;
     padding-left: 15px;
 }
+/* ===================================== */
 
+.paragraph {
+    color: rgba(255, 255, 255, 0.8);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* ====================About Section================================== */
 .container {
     max-width: 1200px;
@@ -221,7 +245,6 @@ body {
     font-size: 14px;
     color: #888;
 }
-
 /* ============Events Section==================== */
 .card-wrapper {
     display: flex;
@@ -378,6 +401,18 @@ body {
     }
 }
 
+@media only screen and (max-width: 576px) {
+    .card {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .company-name {
+        font-size: 1.4rem;
+        margin-left: 4.5rem;
+    }
+}
 /* ==============Review Section================= */
 .review-card {
     border-radius: 10px;
@@ -398,7 +433,6 @@ body {
     font-size: 16px;
     color: #666;
 }
-
 /* =============Contact Section=============== */
 .contact-form {
     max-width: 500px;
@@ -441,9 +475,8 @@ body {
 .contact-form button:hover {
     background-color: #fc5356;
 }
-
 /* =============Footer Section================ */
-footer {
+.footer {
     background-color: var(--secondaryColor);
     padding: 30px 0;
     text-align: center;
@@ -465,16 +498,13 @@ footer {
 /* ================================ */
 /* Main_Section-Contact */
 #contact {
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    margin: 5rem 0;
+    padding: 5rem 0;
     box-shadow: var(--mainBoxShadow);
 }
 
 .Contact {
-    margin-left: 13rem;
-    margin-right: 13rem;
+    margin: 0 13rem;
     border: 12px solid var(--alternativeColor);
     border-radius: 4px;
 }
@@ -482,7 +512,6 @@ footer {
 .contact-row {
     margin: auto;
     width: 30rem !important;
-
 }
 
 .form-control {
@@ -504,13 +533,172 @@ footer {
     margin-left: 9.5rem;
     border-radius: 1rem;
 }
-
 /* End-Of_Main_Section-Contact */
 /* ====================================================================== */
 /* Footer-Styling */
 footer {
     margin-top: 14.85rem;
+    padding: 30px 0;
+    text-align: center;
+    background-color: var(--secondaryColor);
     overflow-x: hidden;
 }
-
 /* End-Of_Footer-Styling */
+/* ====================================================================== */
+/* Media Queries-Responsiveness */
+@media only screen and (max-width: 1000px) {
+    .Contact {
+        width: 90vw !important;
+        margin: auto;
+    }
+
+    .logo {
+        width: 8rem;
+        height: 8rem;
+        margin: auto;
+    }
+
+    .company-name {
+        margin: auto;
+        margin-left: 8rem;
+        font-size: 3.5rem;
+    }
+}
+/* ==================================================== */
+@media only screen and (max-width: 900px) {
+    .navbar {
+        width: 100vw !important;
+    }
+
+    .company-name {
+        margin: auto;
+        margin-left: 7.5rem;
+        font-size: 3.5rem;
+    }
+}
+/* ==================================================== */
+/* ==================================================== */
+@media only screen and (max-width: 800px) {
+    .navbar {
+        width: 100vw !important;
+    }
+
+    .company-name {
+        margin: auto;
+        margin-left: 5rem;
+        font-size: 3.5rem;
+    }
+}
+/* ==================================================== */
+@media only screen and (max-width: 720px) {
+    .Contact {
+        width: 85vw !important;
+        margin: auto;
+    }
+
+    .logo {
+        width: 4rem;
+        height: 4rem;
+        margin: auto;
+    }
+
+    .company-name {
+        margin: 3rem auto;
+        margin-left: 12rem;
+        font-size: 2.75rem;
+    }
+
+    .navbar {
+        margin: auto;
+        width: 100vw !important;
+    }
+}
+/* ==================================================== */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        width: 100vw !important;
+    }
+
+    .company-name {
+        margin: auto;
+        margin-left: 10rem;
+        font-size: 2.5rem;
+    }
+}
+/* ==================================================== */
+@media only screen and (max-width: 500px) {
+    .Contact {
+        width: 95vw !important;
+        margin: auto;
+    }
+
+    .logo {
+        width: 4.5rem;
+        height: 4.5rem;
+        margin: auto;
+    }
+
+    .navbar {
+        width: 100vw !important;
+    }
+
+    .company-name {
+        margin: 2rem;
+        margin-left: 9rem;
+        font-size: 1.9rem;
+    }
+
+    footer {
+        width: 100vw !important;
+        margin: auto;
+    }
+}
+/* ==================================================== */
+@media only screen and (max-width: 400px) {
+    .navbar {
+        width: 100vw !important;
+    }
+
+    .company-name {
+        margin: 1rem;
+        margin-left: 5.5rem;
+        font-size: 1.8rem;
+    }
+}
+/* ==================================================== */
+@media only screen and (max-width: 300px) {
+    .navbar {
+        width: 100vw !important;
+    }
+
+    .company-name {
+        margin: 1rem;
+        margin-left: 4.5rem;
+        font-size: 1.4rem;
+    }
+
+    footer {
+        width: 100vw !important;
+        margin-left: auto;
+    }
+
+    #contact {
+        width: 100vw !important;
+        /* margin: auto; */
+    }
+}
+/* ==================================================== */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* ==================================================== */
