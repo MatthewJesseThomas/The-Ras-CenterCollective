@@ -6,7 +6,7 @@
     "karma": "^6.4.2",
     "nodemailer": "^6.9.6",
     "redux": "^4.2.1",
-    "sweetalert2": "^11.7.32",
+    "sweetalert2": "^11.8.0",
     "webpack": "^5.88.2"
   }
 }
